@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SM Photography Mart | Peddi Shiva Kumar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] },
+                    colors: { gold: '#D4AF37', matte: '#0a0a0a' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body { background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; width: 100%; position: relative; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
+        .service-card:hover { border-color: #D4AF37; transform: translateY(-5px); background: rgba(212, 175, 55, 0.03); }
+        #preloader { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .gold-glow { text-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+        #mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); width: 100%; height: 100vh; }
+        #mobile-menu.active { transform: translateX(0); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <div id="preloader">
+        <h1 class="font-serif text-xl md:text-3xl tracking-[0.3em] text-gold opacity-0 uppercase" id="load-brand">SM Photography Mart</h1>
+        <div class="w-0 h-[1px] bg-gold mt-4" id="load-line"></div>
+    </div>
+
+    <nav class="fixed w-full z-[100] px-3 md:px-6 py-4 md:py-6 transition-all" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-5 py-3 md:px-8 md:py-4">
+            <div class="font-serif text-lg md:text-2xl font-bold tracking-widest uppercase">SM <span class="text-gold">Mart</span></div>
+            <div class="hidden md:flex space-x-10 text-[9px] uppercase tracking-[0.3em] font-semibold">
+                <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="gallery.html" class="hover:text-gold transition">Gallery</a>
+                <a href="iphone-reel-service.html" class="hover:text-gold transition">iPhone Reels</a>
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#contact" class="text-gold">Inquiry</a>
+            </div>
+            <button class="md:hidden text-gold text-xl p-2" id="menu-btn"><i class="fas fa-bars-staggered"></i></button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[150] flex flex-col items-center justify-center space-y-8 md:hidden">
+        <button id="close-menu" class="absolute top-8 right-8 text-gold text-3xl">&times;</button>
+        <a href="#home" class="font-serif text-2xl tracking-widest uppercase mobile-link">Home</a>
+        <a href="gallery.html" class="font-serif text-2xl tracking-widest uppercase mobile-link">Gallery</a>
+        <a href="iphone-reel-service.html" class="font-serif text-2xl tracking-widest uppercase mobile-link">iPhone Reels</a>
+        <a href="#services" class="font-serif text-2xl tracking-widest uppercase mobile-link">Services</a>
+        <a href="#contact" class="font-serif text-2xl tracking-widest uppercase text-gold mobile-link">Inquiry</a>
+    </div>
+
+    <section id="home" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h4 class="text-gold tracking-[0.3em] text-[10px] uppercase mb-6" data-aos="fade-up">Peddi Shiva Kumar Presents</h4>
+            <h1 class="font-serif text-3xl md:text-8xl leading-tight mb-8 uppercase" data-aos="fade-up" data-aos-delay="200">
+                Capturing <span class="italic text-gold">Soul.</span><br>Creating Memories.
+            </h1>
+            <div class="flex flex-col md:flex-row gap-4 justify-center mt-12 px-6" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://wa.me/918328297581" class="bg-gold text-black px-10 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] hover:bg-white transition uppercase">BOOK THE ARTIST</a>
+                <a href="gallery.html" class="border border-white/20 px-10 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition uppercase">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Section -->
+    <section id="about" class="py-16 md:py-32 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative group w-full" data-aos="zoom-in">
+                <div class="absolute -inset-2 bg-gold/20 rounded-2xl blur-xl transition"></div>
+                <img src="https://lh3.googleusercontent.com/d/1EzTG8jB7m1C2FjcEPpD1qgJm4gfKCP1A" class="relative rounded-2xl w-full h-[350px] md:h-[600px] object-cover grayscale hover:grayscale-0 transition duration-700 shadow-2xl">
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-gold uppercase tracking-[0.4em] text-[10px] mb-4">The Visionary Owner</h3>
+                <h2 class="font-serif text-3xl md:text-5xl mb-6 leading-tight">Peddi Shiva Kumar</h2>
+                <p class="text-gray-400 leading-relaxed mb-10 text-sm md:text-lg font-light">
+                    Transforming raw moments into cinematic masterpieces. With a legacy of over <span class="text-white font-bold underline decoration-gold">172,294+ YouTube views</span>, Shiva Kumar leads a team dedicated to technical perfection. Based in Nizamabad, serving all of Telangana.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="https://www.youtube.com/@smphotographymartStudio/featured" target="_blank" class="flex-1 bg-red-600 p-4 rounded-xl flex items-center justify-center gap-3 hover:scale-105 transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                        <span class="font-bold text-[10px] tracking-widest uppercase">YouTube Channel</span>
+                    </a>
+                    <a href="https://www.instagram.com/smphotographymart_official/" target="_blank" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-xl flex items-center justify-center gap-3 hover:scale-105 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span class="font-bold text-[10px] tracking-widest uppercase">Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Why Choose Us -->
+    <section class="py-24 bg-gradient-to-b from-black to-matte px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-3xl md:text-6xl mb-4 text-white">Why <span class="text-gold italic">Choose Us</span></h2>
+                <p class="text-gray-500 uppercase tracking-[0.3em] text-[10px]">More than just quick delivery — it’s powerful storytelling, crafted on demand.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"><i class="fas fa-video text-gold text-2xl"></i></div>
+                    <h3 class="font-serif text-2xl text-white mb-4">Professional Reel Creators</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">Every creator goes through a multi-layer screening process to guarantee cinematic framing and brand-ready results.</p>
+                </div>
+                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"><i class="fas fa-tags text-gold text-2xl"></i></div>
+                    <h3 class="font-serif text-2xl text-white mb-4">Transparent Packages</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">Simple, all-inclusive pricing. No surprise charges. What you see is exactly what you pay for premium excellence.</p>
+                </div>
+                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch text-gold text-2xl"></i></div>
+                    <h3 class="font-serif text-2xl text-white mb-4">On-Time Delivery Promise</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">We respect timelines. Your content is shot, edited, and delivered quickly without compromising technical quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-matte px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-6xl mb-4 italic text-gold">Our Expertise</h2>
+                <p class="text-gray-500 uppercase tracking-[0.3em] text-[9px]">Premium Production & Advanced Post-Processing</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service items remain as per your original file... showing 2 for brevity -->
+                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
+                    <h3 class="font-serif text-xl text-gold mb-6">01. Wedding Cinematic Editing</h3>
+                    <ul class="text-[10px] text-gray-400 space-y-3 uppercase"><li>• Story-based Cuts</li><li>• Color Luts</li></ul>
+                </div>
+                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
+                    <h3 class="font-serif text-xl text-gold mb-6">02. Candid Photography</h3>
+                    <ul class="text-[10px] text-gray-400 space-y-3 uppercase"><li>• Raw Emotions</li><li>• Boutique Style</li></ul>
+                </div>
+                <!-- ... other services ... -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-matte px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="font-serif text-3xl md:text-5xl mb-6">Secure Your <span class="text-gold italic">Date</span></h2>
+                <form id="wa-form" class="space-y-6">
+                    <input type="text" id="name" placeholder="FULL NAME" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px]" required>
+                    <input type="text" id="service" placeholder="REQUIRED SERVICE" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px]" required>
+                    <textarea id="message" placeholder="EVENT DETAILS & DATE" rows="3" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px]" required></textarea>
+                    <button type="submit" class="w-full bg-gold text-black py-5 rounded-xl font-bold text-[10px] tracking-[0.3em] hover:bg-white transition uppercase">Send Whatsapp Inquiry</button>
+                </form>
+            </div>
+            <div class="h-[300px] md:h-[600px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <iframe class="w-full h-full grayscale" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.333246377771!2d78.0934151!3d18.6750882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcde662b23a9d7b%3A0x6a0904d9c02280d9!2sMarkandeya%20Temple%20Rd%2C%20Jandagally%2C%20Shivaji%20Nagar%2C%20Nizamabad%2C%20Telangana%20503001!5e0!3m2!1sen!2sin!4v1700000000000" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 bg-black text-center px-6">
+        <h2 class="font-serif text-xl md:text-3xl tracking-widest uppercase mb-4 text-gold">SM Photography Mart</h2>
+        <div class="flex justify-center space-x-8 mb-12 text-lg">
+            <a href="https://www.youtube.com/@smphotographymartStudio/featured" class="text-gray-500 hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/smphotographymart_official/" class="text-gray-500 hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="text-[8px] text-gray-700 tracking-[0.3em] uppercase">
+            &copy; CodeWave SMPhotographyMart | 2024 | All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        const menuBtn = document.getElementById('menu-btn'), closeBtn = document.getElementById('close-menu'), mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.onclick = () => mobileMenu.classList.add('active');
+        closeBtn.onclick = () => mobileMenu.classList.remove('active');
+        window.addEventListener('load', () => {
+            gsap.timeline().to("#load-brand", { opacity: 1, y: -10, duration: 1 }).to("#load-line", { width: "100px", duration: 1 }).to("#preloader", { y: "-100%", duration: 1 });
+        });
+        document.getElementById('wa-form').onsubmit = (e) => {
+            e.preventDefault();
+            const t = `Inquiry:\nName: ${document.getElementById('name').value}\nService: ${document.getElementById('service').value}\nDetails: ${document.getElementById('message').value}`;
+            window.open(`https://wa.me/918328297581?text=${encodeURIComponent(t)}`, '_blank');
+        };
+    </script>
+</body>
+</html>
+2. gallery.html (Masonry Gallery)
+code
+Html
+play_circle
+download
+content_copy
+expand_less
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | SM Photography Mart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] }, colors: { gold: '#D4AF37', matte: '#0a0a0a' } } } }
+    </script>
+    <style>
+        body { background-color: #050505; color: white; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
+        .filter-btn.active { background: #D4AF37; color: black; }
+        .gallery-item { break-inside: avoid; margin-bottom: 1.5rem; transition: all 0.5s ease; cursor: pointer; }
+        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="w-full z-[100] px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-4">
+            <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">SM <span class="text-gold">Mart</span></a>
+            <a href="index.html" class="text-[10px] uppercase tracking-widest font-semibold hover:text-gold transition">Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="pt-16 pb-12 text-center px-6">
+        <h1 class="font-serif text-5xl md:text-7xl mb-4" data-aos="fade-up">Our Visual <span class="text-gold italic">Stories</span></h1>
+        <p class="text-gray-500 uppercase tracking-[0.4em] text-xs">Moments. Emotions. Cinematic Frames.</p>
+    </header>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16 px-6" data-aos="fade-up">
+        <button class="filter-btn active px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('all', this)">All</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('weddings', this)">Weddings</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('reels', this)">Reels</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('commercial', this)">Commercial</button>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 mb-20">
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="gallery-grid">
+            <!-- Item 1 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="weddings">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070" class="w-full grayscale transition duration-700">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="font-serif text-gold text-xl italic">The Royal Vows</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="reels">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1938" class="w-full grayscale transition duration-700">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="font-serif text-gold text-xl italic">iPhone Motion Art</p>
+                </div>
+            </div>
+            <!-- Add more items with correct data-category -->
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 bg-black text-center px-6">
+        <div class="text-[8px] text-gray-700 tracking-[0.5em] uppercase">© 2024 CodeWave SMPhotographyMart</div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+        function filterGallery(c, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if(c === 'all' || item.getAttribute('data-category') === c) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+3. iphone-reel-service.html (Premium Service Page)
+code
+Html
+play_circle
+download
+content_copy
+expand_less
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Reel Services | SM Mart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] }, colors: { gold: '#D4AF37', matte: '#0a0a0a' } } } }
+    </script>
+    <style>
+        body { background-color: #050505; color: white; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
+        .pricing-card:hover { transform: translateY(-10px); border-color: #D4AF37; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary i { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden border-b border-white/5">
+        <div class="relative z-10 text-center px-6">
+            <h1 class="font-serif text-5xl md:text-8xl mb-6" data-aos="fade-up">iPhone Reel <span class="text-gold italic">Shoot Services</span></h1>
+            <p class="max-w-2xl mx-auto text-gray-500 uppercase tracking-widest text-xs mb-10" data-aos="fade-up">Cinematic Reels. Shot Smart. Delivered Fast.</p>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-matte">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class="pricing-card glass p-10 rounded-[40px] border-white/10 transition-all duration-500" data-aos="fade-right">
+                <h2 class="font-serif text-3xl mb-8">Basic Creator Shoot</h2>
+                <ul class="space-y-4 mb-10 text-gray-400 text-sm">
+                    <li><i class="fas fa-check text-gold mr-3"></i> 60 Minutes Shoot Duration</li>
+                    <li><i class="fas fa-check text-gold mr-3"></i> 1 Professionally Edited Reel</li>
+                    <li><i class="fas fa-check text-gold mr-3"></i> Shot on Latest Flagship iPhone</li>
+                    <li><i class="fas fa-check text-gold mr-3"></i> Express Turnaround</li>
+                </ul>
+                <a href="https://wa.me/918328297581" class="block text-center border border-gold text-gold py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold hover:text-black transition uppercase">Book Your Reel Shoot</a>
+            </div>
+            <div class="pricing-card glass p-10 rounded-[40px] border-gold transition-all duration-500 bg-gold/5" data-aos="fade-left">
+                <h2 class="font-serif text-3xl mb-8">Pro Growth Shoot</h2>
+                <ul class="space-y-4 mb-10 text-gray-400 text-sm">
+                    <li><i class="fas fa-check text-gold mr-3"></i> Up to 3 Hours Shoot</li>
+                    <li><i class="fas fa-check text-gold mr-3"></i> 2 High-Impact Edited Reels</li>
+                    <li><i class="fas fa-check text-gold mr-3"></i> Flagship iPhone Production</li>
+                    <li><i class="fas fa-check text-gold mr-3"></i> Priority Fast Delivery</li>
+                </ul>
+                <a href="https://wa.me/918328297581" class="block text-center bg-gold text-black py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-white transition uppercase">Book Your Reel Shoot</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 border-y border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl mb-12">Why Creators <span class="text-gold italic">Trust Us</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up">
+                    <h4 class="text-white font-serif text-xl mb-4">Expert Reel Filmmakers</h4>
+                    <p class="text-gray-500 text-sm">Masters of vertical storytelling and social media dynamics.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-white font-serif text-xl mb-4">Clear & Honest Pricing</h4>
+                    <p class="text-gray-500 text-sm">No hidden costs, just high-quality production for your brand.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-white font-serif text-xl mb-4">Fast Yet Cinematic Delivery</h4>
+                    <p class="text-gray-500 text-sm">Rapid turnarounds without sacrificing artistic quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-4xl mx-auto">
+        <h2 class="font-serif text-4xl text-center mb-12">Frequently Asked <span class="text-gold italic">Questions</span></h2>
+        <div class="space-y-4">
+            <details class="glass p-6 rounded-2xl group cursor-pointer border-white/5">
+                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-widest uppercase text-gold">What makes your platform different?<i class="fas fa-chevron-down transition"></i></summary>
+                <p class="mt-4 text-gray-400 text-sm">We combine high-end iPhone technology with professional cinematic directing, making your reels look elite.</p>
+            </details>
+            <details class="glass p-6 rounded-2xl group cursor-pointer border-white/5">
+                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-widest uppercase text-gold">How fast is delivery?<i class="fas fa-chevron-down transition"></i></summary>
+                <p class="mt-4 text-gray-400 text-sm">iPhone reels are usually delivered within 48 to 72 hours depending on the complexity of the edits.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 text-center bg-gold/5">
+        <h2 class="font-serif text-4xl md:text-6xl mb-6">🔥 India’s Creator <span class="italic">Movement</span></h2>
+        <a href="https://wa.me/918328297581" class="inline-block bg-white text-black px-12 py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold transition uppercase">Join as a Creator</a>
+    </section>
+
+    <footer class="py-12 bg-black text-center text-gray-700 text-[8px] tracking-[0.5em] uppercase">
+        © 2024 CodeWave SMPhotographyMart | All Rights Reserved
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
