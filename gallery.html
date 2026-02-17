@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | SM Photography Mart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] }, colors: { gold: '#D4AF37', matte: '#0a0a0a' } } } }
+    </script>
+    <style>
+        body { background-color: #050505; color: white; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
+        .filter-btn.active { background: #D4AF37; color: black; }
+        .gallery-item { break-inside: avoid; margin-bottom: 1.5rem; transition: all 0.5s ease; cursor: pointer; }
+        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="w-full z-[100] px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-4">
+            <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">SM <span class="text-gold">Mart</span></a>
+            <a href="index.html" class="text-[10px] uppercase tracking-widest font-semibold hover:text-gold transition">Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="pt-16 pb-12 text-center px-6">
+        <h1 class="font-serif text-5xl md:text-7xl mb-4" data-aos="fade-up">Our Visual <span class="text-gold italic">Stories</span></h1>
+        <p class="text-gray-500 uppercase tracking-[0.4em] text-xs">Moments. Emotions. Cinematic Frames.</p>
+    </header>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16 px-6" data-aos="fade-up">
+        <button class="filter-btn active px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('all', this)">All</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('weddings', this)">Weddings</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('reels', this)">Reels</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('commercial', this)">Commercial</button>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 mb-20">
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="gallery-grid">
+            <!-- Item 1 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="weddings">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070" class="w-full grayscale transition duration-700">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="font-serif text-gold text-xl italic">The Royal Vows</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="reels">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1938" class="w-full grayscale transition duration-700">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="font-serif text-gold text-xl italic">iPhone Motion Art</p>
+                </div>
+            </div>
+            <!-- Add more items with correct data-category -->
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 bg-black text-center px-6">
+        <div class="text-[8px] text-gray-700 tracking-[0.5em] uppercase">© 2024 CodeWave SMPhotographyMart</div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+        function filterGallery(c, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if(c === 'all' || item.getAttribute('data-category') === c) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
