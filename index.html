@@ -84,8 +84,10 @@
                 SM <span class="text-gold">Mart</span>
             </div>
             
-            <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-semibold">
+            <div class="hidden md:flex space-x-10 text-[9px] uppercase tracking-[0.3em] font-semibold">
                 <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="gallery.html" class="hover:text-gold transition">Gallery</a>
+                <a href="iphone-reel-service.html" class="hover:text-gold transition">iPhone Reels</a>
                 <a href="#about" class="hover:text-gold transition">Artist</a>
                 <a href="#services" class="hover:text-gold transition">Services</a>
                 <a href="#contact" class="text-gold">Inquiry</a>
@@ -101,6 +103,8 @@
     <div id="mobile-menu" class="fixed inset-0 bg-black z-[150] flex flex-col items-center justify-center space-y-8 md:hidden">
         <button id="close-menu" class="absolute top-8 right-8 text-gold text-3xl">&times;</button>
         <a href="#home" class="font-serif text-2xl tracking-widest uppercase mobile-link">Home</a>
+        <a href="gallery.html" class="font-serif text-2xl tracking-widest uppercase mobile-link">Gallery</a>
+        <a href="iphone-reel-service.html" class="font-serif text-2xl tracking-widest uppercase mobile-link">iPhone Reels</a>
         <a href="#about" class="font-serif text-2xl tracking-widest uppercase mobile-link">Artist</a>
         <a href="#services" class="font-serif text-2xl tracking-widest uppercase mobile-link">Services</a>
         <a href="#contact" class="font-serif text-2xl tracking-widest uppercase text-gold mobile-link">Inquiry</a>
@@ -157,36 +161,9 @@
                 </div>
             </div>
         </div>
-    </section> 
-
-    <!-- NEW SECTION: Why Choose Us -->
-    <section class="py-24 bg-gradient-to-b from-black to-matte px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-serif text-3xl md:text-6xl mb-4 text-white">Why <span class="text-gold italic">Choose Us</span></h2>
-                <p class="text-gray-500 uppercase tracking-[0.3em] text-[10px]">More than just quick delivery — it’s powerful storytelling, crafted on demand.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"><i class="fas fa-video text-gold text-2xl"></i></div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Professional Reel Creators</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Every creator goes through a multi-layer screening process to guarantee cinematic framing and brand-ready results.</p>
-                </div>
-                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"><i class="fas fa-tags text-gold text-2xl"></i></div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Transparent Packages</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Simple, all-inclusive pricing. No surprise charges. What you see is exactly what you pay for premium excellence.</p>
-                </div>
-                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch text-gold text-2xl"></i></div>
-                    <h3 class="font-serif text-2xl text-white mb-4">On-Time Delivery Promise</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">We respect timelines. Your content is shot, edited, and delivered quickly without compromising technical quality.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
-      <!-- Services Section (16 Categories) -->
+    <!-- Services Section (RESORED FULL 16 CATEGORIES) -->
     <section id="services" class="py-16 bg-matte px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -262,109 +239,176 @@
             </div>
         </div>
     </section>
-   <!-- Testimonials (16 Slides Auto-Sliding) -->
+
+    <!-- NEW SECTION: Why Choose Us -->
+    <section class="py-20 bg-gradient-to-b from-black to-matte px-6 overflow-hidden border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl mb-4 text-white">Why <span class="text-gold italic">Choose Us</span></h2>
+                <p class="text-gray-500 uppercase tracking-[0.2em] text-[10px]">More than just quick delivery — it’s powerful storytelling, crafted on demand.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500 border border-white/5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -inset-1 bg-gold/10 rounded-[40px] blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-video text-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-4">Professional Reel Creators</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">Every creator goes through a multi-layer screening process to guarantee cinematic framing, clean edits, and brand-ready results.</p>
+                    </div>
+                </div>
+
+                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500 border border-white/5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -inset-1 bg-gold/10 rounded-[40px] blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-tags text-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-4">Transparent Packages</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">Simple, all-inclusive pricing. No surprise charges. What you see is exactly what you pay for premium visual excellence.</p>
+                    </div>
+                </div>
+
+                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500 border border-white/5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute -inset-1 bg-gold/10 rounded-[40px] blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-stopwatch text-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-4">On-Time Delivery Promise</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">We respect timelines. Your content is shot, edited, and delivered quickly without compromising the technical quality of the art.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Testimonials (Full 16 Slides) -->
     <section class="py-16 px-4 md:px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <h2 class="font-serif text-3xl md:text-5xl text-center mb-12 italic">Global <span class="text-gold">Appreciation</span></h2>
             <div class="swiper testimonialSwiper pb-12">
                 <div class="swiper-wrapper">
-                    <!-- 16 Testimonials -->
+                    <!-- 1 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Shiva Kumar's editing is truly international. Our wedding film felt like cinema."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Rahul Reddy</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
                     </div>
+                    <!-- 2 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Best social media reel editor in Telangana. Views exploded!"</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Suresh Goud</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Hyderabad</span>
                     </div>
+                    <!-- 3 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Master of color grading. Quality is unmatched."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Vikram Rao</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Siddipet</span>
                     </div>
+                    <!-- 4 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Pre-wedding shoot edit was magical. Highly recommended."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Priya Sharma</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Warangal</span>
                     </div>
+                    <!-- 5 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Fastest delivery and cinematic results. Best team."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Mohammed Ali</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Bodhan</span>
                     </div>
+                    <!-- 6 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Loved the drone shots and lighting in my anniversary video."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Naveen B.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Armoor</span>
                     </div>
+                    <!-- 7 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Best iPhone photography ever seen in our local events."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Karthik M.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Koratla</span>
                     </div>
+                    <!-- 8 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Their slow-mo romantic edits are on another level."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Deepthi G.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Metpally</span>
                     </div>
+                    <!-- 9 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Technical perfection and creative storytelling at its best."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Rajesh K.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Jagtial</span>
                     </div>
+                    <!-- 10 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Professional maternity shoot with soft cinematic grading."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Sneha V.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Nirmal</span>
                     </div>
+                    <!-- 11 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Corporate ad editing that actually converts. Great job!"</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Anjali P.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Kamareddy</span>
                     </div>
+                    <!-- 12 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Captures the soul of the event. Forever memories."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Sandeep S.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
                     </div>
+                    <!-- 13 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Superb traditional multi-cam editing. Very clean."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Vinay G.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
                     </div>
+                    <!-- 14 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"The transition effects in our Reels were mind-blowing."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Harsha K.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Hyderabad</span>
                     </div>
+                    <!-- 15 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Quality that speaks for itself. Shiva is a true artist."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Manish R.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Armoor</span>
                     </div>
+                    <!-- 16 -->
                     <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
                         <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Highly recommended for premium wedding production."</p>
                         <h4 class="font-bold text-gold text-[10px] uppercase">Lokesh D.</h4>
                         <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
                     </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section> 
+                    <!-- Additional slides... -->
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -384,202 +428,106 @@
                     <h3 class="text-gold font-bold mb-3 text-sm uppercase tracking-wider">What is the delivery timeline?</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">Cinematic reels are delivered within 1 week. Full event edits take 3-4 weeks depending on the project scale.</p>
                 </div>
-               
-               
-                
                 <div class="glass p-6 rounded-2xl" data-aos="fade-up">
                     <h3 class="text-gold font-bold mb-3 text-sm uppercase tracking-wider">Are your packages customized?</h3>
                     <p class="text-gray-400 text-xs leading-relaxed">Absolutely! We tailor our photography and editing services based on your specific needs and budget.</p>
                 </div>
-                
             </div>
         </div>
     </section>
- 
-2. gallery.html (Masonry Gallery)
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | SM Photography Mart</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] }, colors: { gold: '#D4AF37', matte: '#0a0a0a' } } } }
-    </script>
-    <style>
-        body { background-color: #050505; color: white; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
-        .filter-btn.active { background: #D4AF37; color: black; }
-        .gallery-item { break-inside: avoid; margin-bottom: 1.5rem; transition: all 0.5s ease; cursor: pointer; }
-        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
-    </style>
-</head>
-<body class="font-sans">
 
-    <nav class="w-full z-[100] px-6 py-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-4">
-            <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">SM <span class="text-gold">Mart</span></a>
-            <a href="index.html" class="text-[10px] uppercase tracking-widest font-semibold hover:text-gold transition">Back to Home</a>
-        </div>
-    </nav>
-
-    <header class="pt-16 pb-12 text-center px-6">
-        <h1 class="font-serif text-5xl md:text-7xl mb-4" data-aos="fade-up">Our Visual <span class="text-gold italic">Stories</span></h1>
-        <p class="text-gray-500 uppercase tracking-[0.4em] text-xs">Moments. Emotions. Cinematic Frames.</p>
-    </header>
-
-    <div class="flex flex-wrap justify-center gap-4 mb-16 px-6" data-aos="fade-up">
-        <button class="filter-btn active px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('all', this)">All</button>
-        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('weddings', this)">Weddings</button>
-        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('reels', this)">Reels</button>
-        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('commercial', this)">Commercial</button>
-    </div>
-
-    <section class="max-w-7xl mx-auto px-6 mb-20">
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="gallery-grid">
-            <!-- Item 1 -->
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="weddings">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070" class="w-full grayscale transition duration-700">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">The Royal Vows</p>
-                </div>
+    <!-- Map & Contact Section -->
+    <section id="contact" class="py-16 bg-matte px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="font-serif text-3xl md:text-5xl mb-6">Secure Your <span class="text-gold italic">Date</span></h2>
+                <p class="text-gray-400 mb-8 text-xs md:text-base">Serving Nizamabad, Hyderabad, and all surrounding regions with elite visual production.</p>
+                <form id="wa-form" class="space-y-6">
+                    <input type="text" id="name" placeholder="FULL NAME" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required>
+                    <input type="text" id="service" placeholder="REQUIRED SERVICE" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required>
+                    <textarea id="message" placeholder="EVENT DETAILS & DATE" rows="3" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required></textarea>
+                    <button type="submit" class="w-full bg-gold text-black py-5 rounded-xl font-bold text-[10px] tracking-[0.3em] hover:bg-white transition uppercase">Send Whatsapp Inquiry</button>
+                </form>
             </div>
-            <!-- Item 2 -->
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="reels">
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1938" class="w-full grayscale transition duration-700">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">iPhone Motion Art</p>
-                </div>
+            <div class="h-[300px] md:h-[600px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <iframe class="w-full h-full grayscale hover:grayscale-0 transition duration-1000" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.333246377771!2d78.0934151!3d18.6750882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcde662b23a9d7b%3A0x6a0904d9c02280d9!2sMarkandeya%20Temple%20Rd%2C%20Jandagally%2C%20Shivaji%20Nagar%2C%20Nizamabad%2C%20Telangana%20503001!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <!-- Add more items with correct data-category -->
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 bg-black text-center px-6">
-        <div class="text-[8px] text-gray-700 tracking-[0.5em] uppercase">© 2024 CodeWave SMPhotographyMart</div>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-black text-center px-6 overflow-hidden">
+        <h2 class="font-serif text-xl md:text-3xl tracking-widest uppercase mb-4 text-gold">SM Photography Mart</h2>
+        <p class="text-gray-500 text-[8px] md:text-xs tracking-[0.3em] mb-12 uppercase">Directed by Peddi Shiva Kumar</p>
+        <div class="flex justify-center space-x-8 md:space-x-12 mb-12 text-lg md:text-xl">
+            <a href="https://www.youtube.com/@smphotographymartStudio/featured" class="text-gray-500 hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/smphotographymart_official/" class="text-gray-500 hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+            <a href="tel:8328297581" class="text-gray-500 hover:text-gold transition"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="text-[7px] md:text-[8px] text-gray-700 tracking-[0.3em] md:tracking-[0.8em] uppercase">
+            &copy; CodeWave SMPhotographyMart. All Rights Reserved.
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000 });
-        function filterGallery(c, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                if(c === 'all' || item.getAttribute('data-category') === c) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+        AOS.init({ duration: 1000, once: true });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        const closeMenuFunc = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+        closeBtn.addEventListener('click', closeMenuFunc);
+        links.forEach(link => link.addEventListener('click', closeMenuFunc));
+
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+            tl.to("#load-brand", { opacity: 1, y: -10, duration: 1 })
+              .to("#load-line", { width: "100px", duration: 1, ease: "power4.out" })
+              .to("#preloader", { y: "-100%", duration: 1, ease: "expo.inOut" });
+        });
+
+        new Swiper(".testimonialSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            speed: 1000,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+
+        document.getElementById('wa-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const text = `Inquiry: \nName: ${document.getElementById('name').value}\nService: ${document.getElementById('service').value}\nDetails: ${document.getElementById('message').value}`;
+            window.open(`https://wa.me/918328297581?text=${encodeURIComponent(text)}`, '_blank');
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-black/90');
+                nav.classList.remove('py-4', 'md:py-6');
+            } else {
+                nav.classList.remove('py-2', 'bg-black/90');
+                nav.classList.add('py-4', 'md:py-6');
+            }
+        });
     </script>
-</body>
-</html>
-3. iphone-reel-service.html (Premium Service Page) 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Reel Services | SM Mart</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] }, colors: { gold: '#D4AF37', matte: '#0a0a0a' } } } }
-    </script>
-    <style>
-        body { background-color: #050505; color: white; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
-        .pricing-card:hover { transform: translateY(-10px); border-color: #D4AF37; }
-        details summary::-webkit-details-marker { display: none; }
-        details[open] summary i { transform: rotate(180deg); }
-    </style>
-</head>
-<body class="font-sans">
-
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden border-b border-white/5">
-        <div class="relative z-10 text-center px-6">
-            <h1 class="font-serif text-5xl md:text-8xl mb-6" data-aos="fade-up">iPhone Reel <span class="text-gold italic">Shoot Services</span></h1>
-            <p class="max-w-2xl mx-auto text-gray-500 uppercase tracking-widest text-xs mb-10" data-aos="fade-up">Cinematic Reels. Shot Smart. Delivered Fast.</p>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 bg-matte">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-            <div class="pricing-card glass p-10 rounded-[40px] border-white/10 transition-all duration-500" data-aos="fade-right">
-                <h2 class="font-serif text-3xl mb-8">Basic Creator Shoot</h2>
-                <ul class="space-y-4 mb-10 text-gray-400 text-sm">
-                    <li><i class="fas fa-check text-gold mr-3"></i> 60 Minutes Shoot Duration</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> 1 Professionally Edited Reel</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Shot on Latest Flagship iPhone</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Express Turnaround</li>
-                </ul>
-                <a href="https://wa.me/918328297581" class="block text-center border border-gold text-gold py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold hover:text-black transition uppercase">Book Your Reel Shoot</a>
-            </div>
-            <div class="pricing-card glass p-10 rounded-[40px] border-gold transition-all duration-500 bg-gold/5" data-aos="fade-left">
-                <h2 class="font-serif text-3xl mb-8">Pro Growth Shoot</h2>
-                <ul class="space-y-4 mb-10 text-gray-400 text-sm">
-                    <li><i class="fas fa-check text-gold mr-3"></i> Up to 3 Hours Shoot</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> 2 High-Impact Edited Reels</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Flagship iPhone Production</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Priority Fast Delivery</li>
-                </ul>
-                <a href="https://wa.me/918328297581" class="block text-center bg-gold text-black py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-white transition uppercase">Book Your Reel Shoot</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 border-y border-white/5 bg-black">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="font-serif text-4xl mb-12">Why Creators <span class="text-gold italic">Trust Us</span></h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div data-aos="fade-up">
-                    <h4 class="text-white font-serif text-xl mb-4">Expert Reel Filmmakers</h4>
-                    <p class="text-gray-500 text-sm">Masters of vertical storytelling and social media dynamics.</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-white font-serif text-xl mb-4">Clear & Honest Pricing</h4>
-                    <p class="text-gray-500 text-sm">No hidden costs, just high-quality production for your brand.</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-white font-serif text-xl mb-4">Fast Yet Cinematic Delivery</h4>
-                    <p class="text-gray-500 text-sm">Rapid turnarounds without sacrificing artistic quality.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 max-w-4xl mx-auto">
-        <h2 class="font-serif text-4xl text-center mb-12">Frequently Asked <span class="text-gold italic">Questions</span></h2>
-        <div class="space-y-4">
-            <details class="glass p-6 rounded-2xl group cursor-pointer border-white/5">
-                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-widest uppercase text-gold">What makes your platform different?<i class="fas fa-chevron-down transition"></i></summary>
-                <p class="mt-4 text-gray-400 text-sm">We combine high-end iPhone technology with professional cinematic directing, making your reels look elite.</p>
-            </details>
-            <details class="glass p-6 rounded-2xl group cursor-pointer border-white/5">
-                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-widest uppercase text-gold">How fast is delivery?<i class="fas fa-chevron-down transition"></i></summary>
-                <p class="mt-4 text-gray-400 text-sm">iPhone reels are usually delivered within 48 to 72 hours depending on the complexity of the edits.</p>
-            </details>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 text-center bg-gold/5">
-        <h2 class="font-serif text-4xl md:text-6xl mb-6">🔥 India’s Creator <span class="italic">Movement</span></h2>
-        <a href="https://wa.me/918328297581" class="inline-block bg-white text-black px-12 py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold transition uppercase">Join as a Creator</a>
-    </section>
-
-    <footer class="py-12 bg-black text-center text-gray-700 text-[8px] tracking-[0.5em] uppercase">
-        © 2024 CodeWave SMPhotographyMart | All Rights Reserved
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
