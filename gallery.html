@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] }, colors: { gold: '#D4AF37', matte: '#0a0a0a' } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Inter', 'sans-serif'] },
+                    colors: { gold: '#D4AF37', matte: '#0a0a0a' }
+                }
+            }
+        }
     </script>
     <style>
         body { background-color: #050505; color: white; overflow-x: hidden; }
@@ -21,10 +28,14 @@
 </head>
 <body class="font-sans">
 
+    <!-- Simple Nav -->
     <nav class="w-full z-[100] px-6 py-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-4">
             <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">SM <span class="text-gold">Mart</span></a>
-            <a href="index.html" class="text-[10px] uppercase tracking-widest font-semibold hover:text-gold transition">Back to Home</a>
+            <div class="flex space-x-6 text-[10px] uppercase tracking-widest font-semibold">
+                <a href="index.html" class="hover:text-gold transition">Home</a>
+                <a href="iphone-reel-service.html" class="hover:text-gold transition">Reels</a>
+            </div>
         </div>
     </nav>
 
@@ -33,51 +44,36 @@
         <p class="text-gray-500 uppercase tracking-[0.4em] text-xs">Moments. Emotions. Cinematic Frames.</p>
     </header>
 
-    <div class="flex flex-wrap justify-center gap-4 mb-16 px-6" data-aos="fade-up">
-        <button class="filter-btn active px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('all', this)">All</button>
-        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('weddings', this)">Weddings</button>
-        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('reels', this)">Reels</button>
-        <button class="filter-btn px-8 py-2 rounded-full border border-gold/30 text-[10px] tracking-widest uppercase transition" onclick="filterGallery('commercial', this)">Commercial</button>
-    </div>
-
+    <!-- Masonry Grid -->
     <section class="max-w-7xl mx-auto px-6 mb-20">
         <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="gallery-grid">
-            <!-- Item 1 -->
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="weddings">
+            <!-- Add image placeholders here -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-aos="fade-up">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070" class="w-full grayscale transition duration-700">
                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">The Royal Vows</p>
+                    <p class="font-serif text-gold text-xl italic">Cinematic Wedding</p>
                 </div>
             </div>
-            <!-- Item 2 -->
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-category="reels">
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1938" class="w-full grayscale transition duration-700">
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069" class="w-full grayscale transition duration-700">
                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">iPhone Motion Art</p>
+                    <p class="font-serif text-gold text-xl italic">Soulful Portraits</p>
                 </div>
             </div>
-            <!-- Add more items with correct data-category -->
+            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070" class="w-full h-[500px] object-cover grayscale transition duration-700">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="font-serif text-gold text-xl italic">The Big Event</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 bg-black text-center px-6">
-        <div class="text-[8px] text-gray-700 tracking-[0.5em] uppercase">© 2024 CodeWave SMPhotographyMart</div>
+    <footer class="py-12 border-t border-white/5 bg-black text-center text-gray-700 text-[8px] tracking-[0.5em] uppercase">
+        © CodeWave SMPhotographyMart. All Rights Reserved.
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000 });
-        function filterGallery(c, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                if(c === 'all' || item.getAttribute('data-category') === c) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
