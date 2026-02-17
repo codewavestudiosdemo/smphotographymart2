@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | SM Photography Mart</title>
+    <title>Visual Gallery | SM Photography Mart</title>
+    
+    <!-- Premium Typography & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -18,62 +21,164 @@
             }
         }
     </script>
+
     <style>
-        body { background-color: #050505; color: white; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
-        .filter-btn.active { background: #D4AF37; color: black; }
-        .gallery-item { break-inside: avoid; margin-bottom: 1.5rem; transition: all 0.5s ease; cursor: pointer; }
-        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
+        body { background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .nav-pill { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-pill:hover { border-color: rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.02); }
+        
+        /* Masonry Grid Logic */
+        .gallery-grid { columns: 1; column-gap: 1.5rem; }
+        @media (min-width: 640px) { .gallery-grid { columns: 2; } }
+        @media (min-width: 1024px) { .gallery-grid { columns: 3; } }
+        
+        .gallery-item { break-inside: avoid; margin-bottom: 1.5rem; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+        .gallery-item:hover img { transform: scale(1.08); filter: grayscale(0); }
+        
+        .filter-btn.active { background: #D4AF37; color: black; border-color: #D4AF37; }
+        .back-btn:hover i { transform: translateX(-5px); }
     </style>
 </head>
 <body class="font-sans">
 
-    <!-- Simple Nav -->
-    <nav class="w-full z-[100] px-6 py-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-4">
-            <a href="index.html" class="font-serif text-2xl font-bold tracking-widest uppercase">SM <span class="text-gold">Mart</span></a>
-            <div class="flex space-x-6 text-[10px] uppercase tracking-widest font-semibold">
-                <a href="index.html" class="hover:text-gold transition">Home</a>
-                <a href="iphone-reel-service.html" class="hover:text-gold transition">Reels</a>
+    <!-- Premium Floating Navigation -->
+    <nav class="fixed w-full z-[150] px-4 py-6 pointer-events-none">
+        <div class="max-w-4xl mx-auto flex justify-between items-center glass rounded-full px-6 py-3 nav-pill pointer-events-auto shadow-2xl">
+            <!-- Back Button -->
+            <a href="index.html" class="back-btn flex items-center gap-3 text-white/70 hover:text-gold transition-all group">
+                <i class="fas fa-arrow-left text-[10px] transition-transform"></i>
+                <span class="text-[9px] font-bold uppercase tracking-[0.2em]">Home</span>
+            </a>
+
+            <!-- Center Logo -->
+            <div class="font-serif text-lg tracking-[0.3em] uppercase font-bold text-white">
+                SM <span class="text-gold italic">Gallery</span>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="flex items-center gap-6">
+                <a href="iphone-reel-service.html" class="hidden md:block text-[9px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-gold transition">Reels</a>
+                <a href="index.html#contact" class="bg-gold text-black px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-white transition-all scale-90 md:scale-100">Inquiry</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-16 pb-12 text-center px-6">
-        <h1 class="font-serif text-5xl md:text-7xl mb-4" data-aos="fade-up">Our Visual <span class="text-gold italic">Stories</span></h1>
-        <p class="text-gray-500 uppercase tracking-[0.4em] text-xs">Moments. Emotions. Cinematic Frames.</p>
+    <!-- Header Section -->
+    <header class="pt-40 pb-20 text-center px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-gold/5 blur-[120px] -z-10"></div>
+        <h4 class="text-gold tracking-[0.5em] text-[10px] uppercase mb-6" data-aos="fade-up">Cinematic Portfolio</h4>
+        <h1 class="font-serif text-5xl md:text-8xl mb-6" data-aos="fade-up" data-aos-delay="100">Our Visual <span class="text-gold italic">Stories</span></h1>
+        <p class="text-gray-500 uppercase tracking-[0.4em] text-[10px]" data-aos="fade-up" data-aos-delay="200">Moments. Emotions. Cinematic Frames.</p>
     </header>
 
-    <!-- Masonry Grid -->
-    <section class="max-w-7xl mx-auto px-6 mb-20">
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="gallery-grid">
-            <!-- Add image placeholders here -->
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070" class="w-full grayscale transition duration-700">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">Cinematic Wedding</p>
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-4 mb-20 px-6" data-aos="fade-up">
+        <button class="filter-btn active px-8 py-2 rounded-full border border-white/10 text-[9px] font-bold tracking-widest uppercase transition-all" onclick="filterGallery('all', this)">All Works</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-white/10 text-[9px] font-bold tracking-widest uppercase transition-all" onclick="filterGallery('weddings', this)">Weddings</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-white/10 text-[9px] font-bold tracking-widest uppercase transition-all" onclick="filterGallery('reels', this)">iPhone Reels</button>
+        <button class="filter-btn px-8 py-2 rounded-full border border-white/10 text-[9px] font-bold tracking-widest uppercase transition-all" onclick="filterGallery('commercial', this)">Commercial</button>
+    </div>
+
+    <!-- Masonry Gallery Grid -->
+    <section class="max-w-7xl mx-auto px-6 mb-32">
+        <div class="gallery-grid" id="gallery-grid">
+            
+            <!-- Item 1 (Wedding) -->
+            <div class="gallery-item group relative overflow-hidden rounded-3xl" data-category="weddings" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070" class="w-full grayscale transition duration-700 object-cover">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="font-serif text-gold text-2xl italic mb-2">The Royal Vows</p>
+                        <p class="text-[8px] tracking-[0.3em] uppercase">Wedding Production</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069" class="w-full grayscale transition duration-700">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">Soulful Portraits</p>
+
+            <!-- Item 2 (Reel Style) -->
+            <div class="gallery-item group relative overflow-hidden rounded-3xl" data-category="reels" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1938" class="w-full grayscale transition duration-700 object-cover">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="font-serif text-gold text-2xl italic mb-2">Motion Art</p>
+                        <p class="text-[8px] tracking-[0.3em] uppercase">iPhone Cinematography</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item group relative overflow-hidden rounded-2xl" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070" class="w-full h-[500px] object-cover grayscale transition duration-700">
-                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <p class="font-serif text-gold text-xl italic">The Big Event</p>
+
+            <!-- Item 3 (Commercial) -->
+            <div class="gallery-item group relative overflow-hidden rounded-3xl" data-category="commercial" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071" class="w-full grayscale transition duration-700 object-cover">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="font-serif text-gold text-2xl italic mb-2">Urban Focus</p>
+                        <p class="text-[8px] tracking-[0.3em] uppercase">Commercial Ads</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Item 4 (Height Variation) -->
+            <div class="gallery-item group relative overflow-hidden rounded-3xl" data-category="weddings" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070" class="w-full h-[500px] object-cover grayscale transition duration-700">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="font-serif text-gold text-2xl italic mb-2">Eternal Grace</p>
+                        <p class="text-[8px] tracking-[0.3em] uppercase">Candid Story</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item group relative overflow-hidden rounded-3xl" data-category="commercial" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070" class="w-full grayscale transition duration-700 object-cover">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="font-serif text-gold text-2xl italic mb-2">Studio Sessions</p>
+                        <p class="text-[8px] tracking-[0.3em] uppercase">Product Shoot</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 bg-black text-center text-gray-700 text-[8px] tracking-[0.5em] uppercase">
-        © CodeWave SMPhotographyMart. All Rights Reserved.
+    <!-- Footer -->
+    <footer class="py-20 bg-matte text-center border-t border-white/5">
+        <h2 class="font-serif text-2xl tracking-[0.5em] uppercase mb-12 text-gold">SM Photography Mart</h2>
+        <div class="flex justify-center gap-10 mb-16 text-[10px] tracking-widest uppercase font-bold text-gray-500">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="iphone-reel-service.html" class="hover:text-gold transition">Reels</a>
+            <a href="index.html#contact" class="hover:text-gold transition text-gold">Book Now</a>
+        </div>
+        <div class="text-[8px] text-gray-700 tracking-[0.6em] uppercase">
+            © CodeWave SMPhotographyMart | 2024 Nizamabad
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Gallery Filtering Logic
+        function filterGallery(category, btn) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            // Update Active Button
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter Items
+            items.forEach(item => {
+                if(category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.style.opacity = '1', 10);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.display = 'none', 500);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
