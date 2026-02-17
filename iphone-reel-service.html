@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone Reel Services | SM Photography Mart</title>
+    
+    <!-- Typography & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -18,77 +21,169 @@
             }
         }
     </script>
+
     <style>
-        body { background-color: #050505; color: white; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
-        .pricing-card:hover { transform: translateY(-10px); border-color: #D4AF37; }
+        body { background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .nav-pill { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-pill:hover { border-color: rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.02); }
+        .pricing-card:hover { transform: translateY(-10px); border-color: #D4AF37; box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1); }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary i { transform: rotate(180deg); }
+        .back-btn:hover i { transform: translateX(-5px); }
     </style>
 </head>
 <body class="font-sans">
 
-    <!-- Hero -->
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden border-b border-white/5 bg-matte">
+    <!-- Premium Floating Navigation -->
+    <nav class="fixed w-full z-[150] px-4 py-6 pointer-events-none">
+        <div class="max-w-4xl mx-auto flex justify-between items-center glass rounded-full px-6 py-3 nav-pill pointer-events-auto shadow-2xl">
+            <!-- Back Button -->
+            <a href="index.html" class="back-btn flex items-center gap-3 text-white/70 hover:text-gold transition-all group">
+                <i class="fas fa-arrow-left text-[10px] transition-transform"></i>
+                <span class="text-[9px] font-bold uppercase tracking-[0.2em]">Home</span>
+            </a>
+
+            <!-- Center Logo -->
+            <div class="font-serif text-lg tracking-[0.3em] uppercase font-bold text-white">
+                SM <span class="text-gold italic">Reels</span>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="flex items-center gap-6">
+                <a href="gallery.html" class="hidden md:block text-[9px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-gold transition">Gallery</a>
+                <a href="index.html#contact" class="bg-gold text-black px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-white transition-all scale-90 md:scale-100">Inquiry</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-matte">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]"></div>
+        </div>
+        
         <div class="relative z-10 text-center px-6">
-            <h1 class="font-serif text-5xl md:text-8xl mb-6" data-aos="fade-up">iPhone Reel <span class="text-gold italic">Shoot Services</span></h1>
-            <p class="max-w-2xl mx-auto text-gray-500 uppercase tracking-widest text-xs mb-10" data-aos="fade-up">Cinematic Reels. Shot Smart. Delivered Fast.</p>
+            <h4 class="text-gold tracking-[0.5em] text-[10px] uppercase mb-6" data-aos="fade-up">Elite Social Production</h4>
+            <h1 class="font-serif text-5xl md:text-8xl mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">iPhone Reel <br><span class="text-gold italic">Shoot Services</span></h1>
+            <p class="max-w-2xl mx-auto text-gray-500 font-light text-sm md:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                Crafting high-impact vertical content that demands attention. High-performance production using flagship iPhones — optimized for massive social growth.
+            </p>
         </div>
     </section>
 
-    <!-- Packages -->
-    <section class="py-24 px-6 bg-black">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-            <div class="pricing-card glass p-10 rounded-[40px] border-white/10 transition-all duration-500" data-aos="fade-right">
-                <h2 class="font-serif text-3xl mb-8">Basic Creator Shoot</h2>
-                <ul class="space-y-4 mb-10 text-gray-400 text-sm">
-                    <li><i class="fas fa-check text-gold mr-3"></i> 60 Minutes Shoot Duration</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> 1 Professionally Edited Reel</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Shot on Latest Flagship iPhone</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Express Turnaround</li>
-                </ul>
-                <a href="https://wa.me/918328297581" class="block text-center border border-gold text-gold py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold hover:text-black transition uppercase">Book Your Reel Shoot</a>
+    <!-- Pricing Packages -->
+    <section class="py-24 px-6 bg-black relative">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+            <!-- Basic -->
+            <div class="pricing-card glass p-12 rounded-[50px] border-white/5 transition-all duration-500 flex flex-col justify-between" data-aos="fade-right">
+                <div>
+                    <h3 class="text-gold uppercase tracking-widest text-[10px] font-bold mb-4">Silver Creator</h3>
+                    <h2 class="font-serif text-4xl mb-8">Basic Creator Shoot</h2>
+                    <ul class="space-y-6 mb-12">
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> 60 Minutes Shoot Duration</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> 1 Professionally Edited Reel</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> Shot on Latest Flagship iPhone</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> Express Turnaround</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/918328297581" class="block text-center border border-gold/30 text-gold py-5 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold hover:text-black transition uppercase">Book Your Reel Shoot</a>
             </div>
 
-            <div class="pricing-card glass p-10 rounded-[40px] border-gold transition-all duration-500 bg-gold/5" data-aos="fade-left">
-                <h2 class="font-serif text-3xl mb-8">Pro Growth Shoot</h2>
-                <ul class="space-y-4 mb-10 text-gray-400 text-sm">
-                    <li><i class="fas fa-check text-gold mr-3"></i> Up to 3 Hours Shoot</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> 2 High-Impact Edited Reels</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Flagship iPhone Production</li>
-                    <li><i class="fas fa-check text-gold mr-3"></i> Priority Fast Delivery</li>
-                </ul>
-                <a href="https://wa.me/918328297581" class="block text-center bg-gold text-black py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-white transition uppercase">Book Your Reel Shoot</a>
+            <!-- Pro -->
+            <div class="pricing-card glass p-12 rounded-[50px] border-gold transition-all duration-500 bg-gold/[0.03] flex flex-col justify-between relative overflow-hidden" data-aos="fade-left">
+                <div class="absolute top-10 right-10 bg-gold text-black text-[8px] font-black px-4 py-1 rounded-full tracking-tighter">MOST POPULAR</div>
+                <div>
+                    <h3 class="text-gold uppercase tracking-widest text-[10px] font-bold mb-4">Gold Director</h3>
+                    <h2 class="font-serif text-4xl mb-8">Pro Growth Shoot</h2>
+                    <ul class="space-y-6 mb-12">
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> Up to 3 Hours Shoot</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> 2 High-Impact Edited Reels</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> Flagship iPhone Production</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> Priority Fast Delivery</li>
+                        <li class="flex items-center gap-4 text-gray-400 text-sm"><i class="fas fa-check text-gold text-[10px]"></i> Certified Reel Director</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/918328297581" class="block text-center bg-gold text-black py-5 rounded-full font-bold text-[10px] tracking-widest hover:bg-white transition uppercase shadow-xl shadow-gold/10">Book Your Reel Shoot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="py-24 border-y border-white/5 bg-matte">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl mb-16">Why Creators <span class="text-gold italic">Trust Us</span></h2>
+            <div class="grid md:grid-cols-3 gap-16">
+                <div data-aos="fade-up">
+                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
+                        <i class="fas fa-film text-gold"></i>
+                    </div>
+                    <h4 class="text-white font-serif text-xl mb-4">Expert Reel Filmmakers</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed uppercase tracking-widest">Masters of vertical storytelling and social media dynamics.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
+                        <i class="fas fa-hand-holding-dollar text-gold"></i>
+                    </div>
+                    <h4 class="text-white font-serif text-xl mb-4">Clear & Honest Pricing</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed uppercase tracking-widest">Transparent billing with zero hidden costs or surprises.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
+                        <i class="fas fa-bolt text-gold"></i>
+                    </div>
+                    <h4 class="text-white font-serif text-xl mb-4">Rapid Cinematic Delivery</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed uppercase tracking-widest">Speed that matches the pace of the digital world.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Accordion -->
     <section class="py-24 px-6 max-w-4xl mx-auto">
-        <h2 class="font-serif text-4xl text-center mb-12 italic">Frequently Asked <span class="text-gold">Questions</span></h2>
+        <h2 class="font-serif text-4xl text-center mb-16 italic">Common <span class="text-gold">Questions</span></h2>
         <div class="space-y-4">
-            <details class="glass p-6 rounded-2xl group cursor-pointer border-white/5">
-                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-widest uppercase text-gold">What makes your platform different?<i class="fas fa-chevron-down transition"></i></summary>
-                <p class="mt-4 text-gray-400 text-sm">We combine flagship technology with professional cinematic directing, making your reels look elite.</p>
+            <details class="glass p-8 rounded-3xl group cursor-pointer transition-all border-white/5">
+                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-[0.3em] uppercase text-gold">
+                    What makes your platform different?
+                    <i class="fas fa-chevron-down text-[8px] transition-transform"></i>
+                </summary>
+                <p class="mt-6 text-gray-400 text-sm leading-relaxed font-light">We combine professional directing with flagship iPhone technology, ensuring your reels don't just look good, but they convert and grow your brand.</p>
             </details>
-            <details class="glass p-6 rounded-2xl group cursor-pointer border-white/5">
-                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-widest uppercase text-gold">Do you shoot only on iPhone?<i class="fas fa-chevron-down transition"></i></summary>
-                <p class="mt-4 text-gray-400 text-sm">For social growth reels, flagship iPhones provide the best vertical dynamics, but we use cinema cameras for large events.</p>
+            <details class="glass p-8 rounded-3xl group cursor-pointer transition-all border-white/5">
+                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-[0.3em] uppercase text-gold">
+                    How fast is delivery?
+                    <i class="fas fa-chevron-down text-[8px] transition-transform"></i>
+                </summary>
+                <p class="mt-6 text-gray-400 text-sm leading-relaxed font-light">Standard iPhone reels are usually delivered within 48 to 72 hours. We prioritize high-speed workflow for our Pro clients.</p>
+            </details>
+            <details class="glass p-8 rounded-3xl group cursor-pointer transition-all border-white/5">
+                <summary class="flex justify-between items-center list-none font-bold text-[10px] tracking-[0.3em] uppercase text-gold">
+                    Do you only use iPhones?
+                    <i class="fas fa-chevron-down text-[8px] transition-transform"></i>
+                </summary>
+                <p class="mt-6 text-gray-400 text-sm leading-relaxed font-light">For this specific service, yes. iPhone Flagships provide the most organic and high-performing vertical video look preferred by social algorithms.</p>
             </details>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-24 px-6 text-center bg-gold/5">
-        <h2 class="font-serif text-4xl md:text-6xl mb-6">🔥 India’s Creator <span class="italic">Movement</span></h2>
-        <a href="https://wa.me/918328297581" class="inline-block bg-white text-black px-12 py-4 rounded-full font-bold text-[10px] tracking-widest hover:bg-gold transition uppercase">Join as a Creator</a>
-    </section>
-
-    <footer class="py-12 bg-black text-center text-gray-700 text-[8px] tracking-[0.5em] uppercase">
-        © CodeWave SMPhotographyMart. All Rights Reserved.
+    <!-- Footer -->
+    <footer class="py-24 bg-matte text-center border-t border-white/5">
+        <h2 class="font-serif text-2xl tracking-[0.5em] uppercase mb-12 text-gold">SM Photography Mart</h2>
+        <div class="flex justify-center gap-10 mb-16 text-[10px] tracking-widest uppercase font-bold text-gray-500">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="gallery.html" class="hover:text-gold transition">Gallery</a>
+            <a href="index.html#contact" class="hover:text-gold transition text-gold">Book Now</a>
+        </div>
+        <div class="text-[8px] text-gray-700 tracking-[0.6em] uppercase">
+            © CodeWave SMPhotographyMart | 2024 Nizamabad
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
