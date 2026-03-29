@@ -33,7 +33,6 @@
     </script>
 
     <style>
-        /* FIX: Prevents horizontal scrolling and "screen k bahar" issue */
         html, body { 
             background-color: #050505; 
             color: white; 
@@ -44,13 +43,12 @@
             position: relative;
         }
 
-        /* FIX: Prevents AOS animations from creating extra width on mobile */
         [data-aos] { pointer-events: none; }
         .aos-animate { pointer-events: auto; }
         
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
         .nav-pill-container { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .service-card:hover { border-color: #D4AF37; transform: translateY(-5px); background: rgba(212, 175, 55, 0.03); }
+        .service-card:hover { border-color: #D4AF37; transform: translateY(-5px); background: rgba(212, 175, 55, 0.05); }
         
         #preloader {
             position: fixed; inset: 0; background: #000; z-index: 9999;
@@ -60,7 +58,6 @@
         .gold-glow { text-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
         .swiper-pagination-bullet { background: #D4AF37 !important; }
         
-        /* Premium Mobile Menu Overlay */
         #mobile-menu-overlay {
             transform: translateY(-100%);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -83,7 +80,7 @@
         <div class="w-0 h-[1px] bg-gold mt-4" id="load-line"></div>
     </div>
 
-    <!-- Premium Floating Navigation (Matches Gallery/Reels Style) -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-[150] px-4 py-6 pointer-events-none">
         <div class="max-w-6xl mx-auto flex justify-between items-center glass rounded-full px-6 py-3 nav-pill-container pointer-events-auto shadow-2xl border border-white/5" id="navbar">
             <div class="font-serif text-lg md:text-xl font-bold tracking-widest uppercase">
@@ -95,7 +92,7 @@
                 <a href="gallery.html" class="hover:text-gold transition text-white/70">Gallery</a>
                 <a href="iphone-reel-service.html" class="hover:text-gold transition text-white/70">Reels</a>
                 <a href="#services" class="hover:text-gold transition text-white/70">Services</a>
-                <a href="#contact" class="bg-gold text-black px-5 py-2 rounded-full hover:bg-white transition">Inquiry</a>
+                <a href="#booking" class="bg-gold text-black px-5 py-2 rounded-full hover:bg-white transition">Book Slot</a>
             </div>
 
             <button class="md:hidden text-gold text-xl p-2" id="menu-btn">
@@ -110,12 +107,11 @@
         <a href="#home" class="font-serif text-2xl tracking-widest uppercase mobile-link">Home</a>
         <a href="gallery.html" class="font-serif text-2xl tracking-widest uppercase mobile-link">Gallery</a>
         <a href="iphone-reel-service.html" class="font-serif text-2xl tracking-widest uppercase mobile-link">iPhone Reels</a>
-        <a href="#about" class="font-serif text-2xl tracking-widest uppercase mobile-link">Artist</a>
         <a href="#services" class="font-serif text-2xl tracking-widest uppercase mobile-link">Services</a>
-        <a href="#contact" class="font-serif text-2xl tracking-widest uppercase text-gold mobile-link">Inquiry</a>
+        <a href="#booking" class="font-serif text-2xl tracking-widest uppercase text-gold mobile-link">Book Now</a>
     </div>
 
-    <!-- Hero Section (FIXED: min-h-screen removes the blocky vibe) -->
+    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071" class="w-full h-full object-cover opacity-20">
@@ -128,48 +124,47 @@
                 Capturing <span class="italic text-gold">Soul.</span><br>Creating Memories.
             </h1>
             <div class="flex flex-col md:flex-row gap-4 justify-center mt-12 px-6" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://wa.me/918328297581?text=Hi%20SM%20Photography%20Mart,%20I%20am%20interested%20in%20booking%20your%20photography/editing%20services." target="_blank" class="bg-gold text-black px-10 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] hover:bg-white transition uppercase">BOOK THE ARTIST</a>
+                <a href="#booking" class="bg-gold text-black px-10 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] hover:bg-white transition uppercase">BOOK YOUR SLOT</a>
                 <a href="#services" class="border border-white/20 px-10 py-4 rounded-full font-bold text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition uppercase">View Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Artist Section -->
-    <section id="about" class="py-20 md:py-32 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative group w-full" data-aos="zoom-in">
-                <div class="absolute -inset-2 bg-gold/20 rounded-2xl blur-xl transition"></div>
-                <img src="https://lh3.googleusercontent.com/d/1EzTG8jB7m1C2FjcEPpD1qgJm4gfKCP1A" class="relative rounded-2xl w-full h-[350px] md:h-[600px] object-cover grayscale hover:grayscale-0 transition duration-700 shadow-2xl">
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 bg-matte px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-5xl mb-4 italic text-gold">Prestigious Awards</h2>
+                <p class="text-gray-500 uppercase tracking-[0.3em] text-[9px]">Recognized for technical and creative excellence</p>
             </div>
-            
-            <div data-aos="fade-left">
-                <h3 class="text-gold uppercase tracking-[0.4em] text-[10px] mb-4">The Visionary Owner</h3>
-                <h2 class="font-serif text-3xl md:text-5xl mb-6 leading-tight">Peddi Shiva Kumar</h2>
-                <p class="text-gray-400 leading-relaxed mb-10 text-sm md:text-lg font-light">
-                    Transforming raw moments into cinematic masterpieces. With a legacy of over <span class="text-white font-bold underline decoration-gold">172,294+ YouTube views</span>, Shiva Kumar leads a team dedicated to technical perfection. Based in Nizamabad, serving all of Telangana.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <div class="relative flex-1">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-red-600 text-[9px] font-black px-3 py-1 rounded-full shadow-xl z-10 yt-badge whitespace-nowrap border border-red-100">
-                            <i class="fas fa-play-circle mr-1"></i> 172,294+ VIEWS
-                        </div>
-                        <a href="https://www.youtube.com/@smphotographymartStudio/featured" target="_blank" class="w-full bg-red-600 p-4 rounded-xl flex items-center justify-center gap-3 hover:scale-105 transition">
-                            <i class="fab fa-youtube text-xl"></i>
-                            <span class="font-bold text-[10px] tracking-widest uppercase">YouTube Channel</span>
-                        </a>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Award 1 -->
+                <div class="glass p-8 rounded-[40px] text-center group transition-all duration-500 hover:border-gold/50" data-aos="fade-right">
+                    <div class="mb-6 overflow-hidden rounded-2xl h-64">
+                        <!-- REPLACE WITH ACTUAL PHOTO 1 -->
+                        <img src="https://lh3.googleusercontent.com/d/1SEc4UENECSsmV_yxW3WU0IZVcdULLscn" alt="Excellence Award" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     </div>
-                    <a href="https://www.instagram.com/smphotographymart_official/" target="_blank" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-xl flex items-center justify-center gap-3 hover:scale-105 transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                        <span class="font-bold text-[10px] tracking-widest uppercase">Instagram</span>
-                    </a>
+                    <i class="fas fa-trophy text-gold text-4xl mb-4"></i>
+                    <h3 class="font-serif text-2xl mb-2">Business Excellence Award 2025</h3>
+                    <p class="text-gold uppercase tracking-[0.2em] text-[10px] font-bold">Indian Wedding Photography Festival</p>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="glass p-8 rounded-[40px] text-center group transition-all duration-500 hover:border-gold/50" data-aos="fade-left">
+                    <div class="mb-6 overflow-hidden rounded-2xl h-64">
+                        <!-- REPLACE WITH ACTUAL PHOTO 2 -->
+                        <img src="https://lh3.googleusercontent.com/d/1wuNUdiWRe-OcNGuRhAMUogud45Rok7ET" alt="Drone Award" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <i class="fas fa-medal text-gold text-4xl mb-4"></i>
+                    <h3 class="font-serif text-2xl mb-2">Drone Operate Excellence Award</h3>
+                    <p class="text-gold uppercase tracking-[0.2em] text-[10px] font-bold">SM Photography Mart Production</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-matte px-6 overflow-hidden">
+    <section id="services" class="py-20 bg-black px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="font-serif text-3xl md:text-6xl mb-4 italic text-gold">Our Expertise</h2>
@@ -177,279 +172,170 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">01. Wedding Cinematic Editing</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Story-based Cuts</li><li>• Color Luts</li></ul>
+                <!-- Service 1 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">01. Wedding Cinematic</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Story-based Cuts</li><li>• Color Luts</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">02. Candid Photography</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Raw Emotions</li><li>• Boutique Style</li></ul>
+                <!-- Service 2 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">02. Candid Photo</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Raw Emotions</li><li>• Boutique Style</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">03. Cinematic Video</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• 4K Recording</li><li>• Movie Composition</li></ul>
+                <!-- Service 3 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">03. Cinematic Video</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• 4K Recording</li><li>• Movie Composition</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">04. Drone Videography</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• 4K Stabilization</li><li>• Bird's Eye View</li></ul>
+                <!-- Service 4 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">04. Drone Video</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• 4K Stabilization</li><li>• Bird's Eye View</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">05. iPhone Reel Edit</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Viral Transitions</li><li>• Fast Pacing</li></ul>
+                <!-- Service 5 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">05. iPhone Reel Edit</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Viral Transitions</li><li>• Fast Pacing</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">06. Pre-Wedding Film</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Music Sync</li><li>• Montage Flow</li></ul>
+                <!-- Service 6 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">06. Pre-Wedding Film</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Music Sync</li><li>• Montage Flow</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">07. Post-Wedding Highlights</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Storytelling</li><li>• Title Effects</li></ul>
+                <!-- Service 7 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">07. Post-Wedding</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Storytelling</li><li>• Title Effects</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">08. Birthday Highlights</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Energetic Cuts</li><li>• Kid Themes</li></ul>
+                <!-- Service 8 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">08. Birthday Highlights</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Energetic Cuts</li><li>• Kid Themes</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">09. Traditional Video</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Event Coverage</li><li>• Audio Sync</li></ul>
+                <!-- Service 9 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">09. Traditional Video</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Event Coverage</li><li>• Audio Sync</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">10. Custom Projects</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• All Video Types</li><li>• Noise Removal</li></ul>
+                <!-- Service 10 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">10. Custom Projects</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• All Video Types</li><li>• Noise Removal</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">11. Candid Photo Edit</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Skin Correction</li><li>• Texture Finish</li></ul>
+                <!-- Service 11 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">11. Candid Photo Edit</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Skin Correction</li><li>• Texture Finish</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">12. Maternity Shoot</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Soft Grading</li><li>• Creative Poses</li></ul>
+                <!-- Service 12 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1590424753042-3e7465ef4571?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">12. Maternity Shoot</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Soft Grading</li><li>• Creative Poses</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">13. Anniversary Editing</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Journey Montage</li><li>• Legacy Story</li></ul>
+                <!-- Service 13 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">13. Anniversary Edit</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Journey Montage</li><li>• Legacy Story</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">14. Commercial Ads</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Brand Focus</li><li>• Paced Cutting</li></ul>
+                <!-- Service 14 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">14. Commercial Ads</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Brand Focus</li><li>• Paced Cutting</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">15. Slow-Mo Romantic</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• Motion Flow</li><li>• Sound Design</li></ul>
+                <!-- Service 15 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1518131394553-852402bbd380?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">15. Slow-Mo Romantic</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• Motion Flow</li><li>• Sound Design</li></ul>
+                    </div>
                 </div>
-                <div class="glass p-8 rounded-3xl service-card transition-all" data-aos="fade-up">
-                    <h3 class="font-serif text-lg md:text-xl text-gold mb-6">16. Social Content</h3>
-                    <ul class="text-[10px] text-gray-400 space-y-3 tracking-widest uppercase"><li>• High Retention</li><li>• FX Integrations</li></ul>
+                <!-- Service 16 -->
+                <div class="glass rounded-3xl overflow-hidden service-card transition-all" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500" class="w-full h-48 object-cover opacity-60">
+                    <div class="p-6">
+                        <h3 class="font-serif text-lg text-gold mb-3 uppercase tracking-wider">16. Social Content</h3>
+                        <ul class="text-[9px] text-gray-400 space-y-2 tracking-widest uppercase"><li>• High Retention</li><li>• FX Integrations</li></ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-20 bg-gradient-to-b from-black to-matte px-6 overflow-hidden border-t border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-serif text-3xl md:text-5xl mb-4 text-white">Why <span class="text-gold italic">Choose Us</span></h2>
-                <p class="text-gray-500 uppercase tracking-[0.2em] text-[10px]">More than just quick delivery — it’s powerful storytelling, crafted on demand.</p>
-            </div>
+    <!-- Slot Booking Section -->
+    <section id="booking" class="py-24 bg-matte px-6 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-6xl mb-6">Book Your <span class="text-gold italic">Slot</span></h2>
+            <p class="text-gray-400 mb-12 text-sm md:text-lg tracking-wide">Ready to create magic? Fill the form below or connect via social media to secure your event date.</p>
+            
+            <form id="wa-form" class="space-y-6 glass p-8 md:p-12 rounded-[40px] border-gold/10">
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="space-y-2">
+                        <label class="text-[9px] tracking-widest text-gold uppercase font-bold">Full Name</label>
+                        <input type="text" id="name" placeholder="YOUR NAME" class="w-full bg-white/5 border-b border-white/20 py-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required>
+                    </div>
+                    <div class="space-y-2 text-left">
+                        <label class="text-[9px] tracking-widest text-gold uppercase font-bold">Select Service</label>
+                        <input type="text" id="service" placeholder="E.G. WEDDING FILM" class="w-full bg-white/5 border-b border-white/20 py-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required>
+                    </div>
+                </div>
+                <div class="space-y-2 text-left">
+                    <label class="text-[9px] tracking-widest text-gold uppercase font-bold">Event Details & Date</label>
+                    <textarea id="message" placeholder="TELL US ABOUT YOUR EVENT" rows="3" class="w-full bg-white/5 border-b border-white/20 py-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gold text-black py-5 rounded-full font-bold text-[11px] tracking-[0.3em] hover:bg-white transition uppercase shadow-2xl">Confirm Booking via Whatsapp</button>
+            </form>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500 border border-white/5" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute -inset-1 bg-gold/10 rounded-[40px] blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                            <i class="fas fa-video text-gold text-2xl"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl text-white mb-4">Professional Reel Creators</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed font-light">Every creator goes through a multi-layer screening process to guarantee cinematic framing, clean edits, and brand-ready results.</p>
-                    </div>
+            <div class="mt-16">
+                <p class="text-[10px] tracking-[0.4em] uppercase text-gray-500 mb-8">Follow Our Artist</p>
+                <div class="flex justify-center space-x-10">
+                    <a href="https://www.instagram.com/smphotographymart_official/" target="_blank" class="text-3xl text-white/50 hover:text-pink-500 transition-all hover:scale-125"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@smphotographymartStudio/featured" target="_blank" class="text-3xl text-white/50 hover:text-red-600 transition-all hover:scale-125"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/918328297581" target="_blank" class="text-3xl text-white/50 hover:text-green-500 transition-all hover:scale-125"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:8328297581" class="text-3xl text-white/50 hover:text-gold transition-all hover:scale-125"><i class="fas fa-phone-alt"></i></a>
                 </div>
-
-                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500 border border-white/5" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute -inset-1 bg-gold/10 rounded-[40px] blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                            <i class="fas fa-tags text-gold text-2xl"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl text-white mb-4">Transparent Packages</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed font-light">Simple, all-inclusive pricing. No surprise charges. What you see is exactly what you pay for premium visual excellence.</p>
-                    </div>
-                </div>
-
-                <div class="glass p-10 rounded-[40px] relative group hover:bg-gold/5 transition-all duration-500 border border-white/5" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute -inset-1 bg-gold/10 rounded-[40px] blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-matte border border-gold/30 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                            <i class="fas fa-stopwatch text-gold text-2xl"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl text-white mb-4">On-Time Delivery Promise</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed font-light">We respect timelines. Your content is shot, edited, and delivered quickly without compromising the technical quality of the art.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!-- Testimonials -->
-    <section class="py-20 px-4 md:px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-5xl text-center mb-12 italic">Global <span class="text-gold">Appreciation</span></h2>
-            <div class="swiper testimonialSwiper pb-12">
-                <div class="swiper-wrapper">
-                    <!-- 1 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Shiva Kumar's editing is truly international. Our wedding film felt like cinema."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Rahul Reddy</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
-                    </div>
-                    <!-- 2 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Best social media reel editor in Telangana. Views exploded!"</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Suresh Goud</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Hyderabad</span>
-                    </div>
-                    <!-- 3 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Master of color grading. Quality is unmatched."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Vikram Rao</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Siddipet</span>
-                    </div>
-                    <!-- 4 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Pre-wedding shoot edit was magical. Highly recommended."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Priya Sharma</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Warangal</span>
-                    </div>
-                    <!-- 5 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Fastest delivery and cinematic results. Best team."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Mohammed Ali</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Bodhan</span>
-                    </div>
-                    <!-- 6 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Loved the drone shots and lighting in my anniversary video."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Naveen B.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Armoor</span>
-                    </div>
-                    <!-- 7 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Best iPhone photography ever seen in our local events."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Karthik M.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Koratla</span>
-                    </div>
-                    <!-- 8 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Their slow-mo romantic edits are on another level."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Deepthi G.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Metpally</span>
-                    </div>
-                    <!-- 9 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Technical perfection and creative storytelling at its best."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Rajesh K.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Jagtial</span>
-                    </div>
-                    <!-- 10 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Professional maternity shoot with soft cinematic grading."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Sneha V.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Nirmal</span>
-                    </div>
-                    <!-- 11 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Corporate ad editing that actually converts. Great job!"</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Anjali P.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Kamareddy</span>
-                    </div>
-                    <!-- 12 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Captures the soul of the event. Forever memories."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Sandeep S.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
-                    </div>
-                    <!-- 13 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Superb traditional multi-cam editing. Very clean."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Vinay G.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
-                    </div>
-                    <!-- 14 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"The transition effects in our Reels were mind-blowing."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Harsha K.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Hyderabad</span>
-                    </div>
-                    <!-- 15 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Quality that speaks for itself. Shiva is a true artist."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Manish R.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Armoor</span>
-                    </div>
-                    <!-- 16 -->
-                    <div class="swiper-slide glass p-6 md:p-10 rounded-[30px] h-auto">
-                        <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="font-light italic text-gray-400 mb-6 text-xs md:text-sm leading-relaxed">"Highly recommended for premium wedding production."</p>
-                        <h4 class="font-bold text-gold text-[10px] uppercase">Lokesh D.</h4>
-                        <span class="text-[8px] opacity-50 uppercase tracking-widest">Nizamabad</span>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20 bg-black px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-5xl text-center mb-12 italic">Common <span class="text-gold">Questions</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass p-6 rounded-2xl" data-aos="fade-up">
-                    <h3 class="text-gold font-bold mb-3 text-sm uppercase tracking-wider">Do you travel for shoots?</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Yes, we serve Nizamabad, Hyderabad, and all across Telangana and Andhra Pradesh for destination shoots.</p>
-                </div>
-                <div class="glass p-6 rounded-2xl" data-aos="fade-up">
-                    <h3 class="text-gold font-bold mb-3 text-sm uppercase tracking-wider">What is the delivery timeline?</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Cinematic reels are delivered within 1 week. Full event edits take 3-4 weeks depending on the project scale.</p>
-                </div>
-                <div class="glass p-6 rounded-2xl" data-aos="fade-up">
-                    <h3 class="text-gold font-bold mb-3 text-sm uppercase tracking-wider">Are your packages customized?</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Absolutely! We tailor our photography and editing services based on your specific needs and budget.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map & Contact Section -->
-    <section id="contact" class="py-20 bg-matte px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="font-serif text-3xl md:text-5xl mb-6">Secure Your <span class="text-gold italic">Date</span></h2>
-                <p class="text-gray-400 mb-8 text-xs md:text-base">Serving Nizamabad, Hyderabad, and all surrounding regions with elite visual production.</p>
-                <form id="wa-form" class="space-y-6">
-                    <input type="text" id="name" placeholder="FULL NAME" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required>
-                    <input type="text" id="service" placeholder="REQUIRED SERVICE" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required>
-                    <textarea id="message" placeholder="EVENT DETAILS & DATE" rows="3" class="w-full bg-white/5 border-b border-white/20 p-4 focus:border-gold outline-none text-[10px] tracking-widest uppercase" required></textarea>
-                    <button type="submit" class="w-full bg-gold text-black py-5 rounded-xl font-bold text-[10px] tracking-[0.3em] hover:bg-white transition uppercase">Send Whatsapp Inquiry</button>
-                </form>
-            </div>
-            <div class="h-[300px] md:h-[600px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe class="w-full h-full grayscale hover:grayscale-0 transition duration-1000" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.333246377771!2d78.0934151!3d18.6750882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcde662b23a9d7b%3A0x6a0904d9c02280d9!2sMarkandeya%20Temple%20Rd%2C%20Jandagally%2C%20Shivaji%20Nagar%2C%20Nizamabad%2C%20Telangana%20503001!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -457,12 +343,7 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-white/5 bg-black text-center px-6 overflow-hidden">
         <h2 class="font-serif text-xl md:text-3xl tracking-widest uppercase mb-4 text-gold">SM Photography Mart</h2>
-        <p class="text-gray-500 text-[8px] md:text-xs tracking-[0.3em] mb-12 uppercase">Directed by Peddi Shiva Kumar</p>
-        <div class="flex justify-center space-x-8 md:space-x-12 mb-12 text-lg md:text-xl">
-            <a href="https://www.youtube.com/@smphotographymartStudio/featured" class="text-gray-500 hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/smphotographymart_official/" class="text-gray-500 hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
-            <a href="tel:8328297581" class="text-gray-500 hover:text-gold transition"><i class="fas fa-phone"></i></a>
-        </div>
+        <p class="text-gray-500 text-[8px] md:text-xs tracking-[0.3em] mb-4 uppercase">Directed by Peddi Shiva Kumar</p>
         <div class="text-[7px] md:text-[8px] text-gray-700 tracking-[0.3em] md:tracking-[0.8em] uppercase">
             &copy; CodeWave SMPhotographyMart. All Rights Reserved.
         </div>
@@ -474,7 +355,6 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Logic for Pill-style Mobile Menu Toggle
         const mBtn = document.getElementById('menu-btn');
         const cBtn = document.getElementById('close-menu');
         const overlay = document.getElementById('mobile-menu-overlay');
@@ -484,7 +364,6 @@
         cBtn.onclick = () => overlay.classList.remove('active');
         mLinks.forEach(link => link.onclick = () => overlay.classList.remove('active'));
 
-        // Preloader GSAP
         window.addEventListener('load', () => {
             const tl = gsap.timeline();
             tl.to("#load-brand", { opacity: 1, y: -10, duration: 1 })
@@ -492,28 +371,12 @@
               .to("#preloader", { y: "-100%", duration: 1, ease: "expo.inOut" });
         });
 
-        // Testimonials Swiper
-        new Swiper(".testimonialSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            speed: 1000,
-            autoplay: { delay: 3000, disableOnInteraction: false },
-            pagination: { el: ".swiper-pagination", clickable: true },
-            breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
-            }
-        });
-
-        // WhatsApp Form Integration
         document.getElementById('wa-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const text = `Inquiry: \nName: ${document.getElementById('name').value}\nService: ${document.getElementById('service').value}\nDetails: ${document.getElementById('message').value}`;
             window.open(`https://wa.me/918328297581?text=${encodeURIComponent(text)}`, '_blank');
         });
 
-        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if(window.scrollY > 50) {
